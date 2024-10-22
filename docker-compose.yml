@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: db
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_DB=mydb
+    volumes:
+      - ./pgData:/var/lib/pg
+    ports:
+      - "5432:5432"
